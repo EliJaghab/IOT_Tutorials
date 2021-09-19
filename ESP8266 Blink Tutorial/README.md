@@ -36,5 +36,9 @@ While it seems like this is a basic project, it is important to set up a strong 
 https://user-images.githubusercontent.com/55901654/133937503-ca36b4ca-0566-440f-97b2-dc50123dd73b.mov
 
 
+
+https://user-images.githubusercontent.com/55901654/133937903-8e61e59c-769a-4ca9-8955-2b793bd7ca5f.mov
+
+
 References:
 [Blink Tutorial](https://github.com/pschragger/IOT_Tutorials_for_VU/blob/main/blink_tutorial/blink_tutorial.md)
