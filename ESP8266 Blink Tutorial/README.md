@@ -27,6 +27,8 @@ Go to File > Examples > 01.Basics > Blink. Select the Verify Button at the top l
 Abstract:
 While it seems like this is a basic project, it is important to set up a strong foundation for future projects. Now we have the Arduino IDE set up along with some working knowledge of how the components interact with each other.
 
+References:
+[Blink Tutorial](https://github.com/pschragger/IOT_Tutorials_for_VU/blob/main/blink_tutorial/blink_tutorial.md)
 
 
 
@@ -40,5 +42,3 @@ While it seems like this is a basic project, it is important to set up a strong 
 https://user-images.githubusercontent.com/55901654/133937933-149de962-ad22-43b7-ae10-665d755b4720.mov
 
 
-References:
-[Blink Tutorial](https://github.com/pschragger/IOT_Tutorials_for_VU/blob/main/blink_tutorial/blink_tutorial.md)
