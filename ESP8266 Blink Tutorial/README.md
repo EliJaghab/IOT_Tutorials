@@ -33,10 +33,6 @@ While it seems like this is a basic project, it is important to set up a strong 
 ![IMG_9579](https://user-images.githubusercontent.com/55901654/133937490-e858c898-69cc-44ac-a1fc-5c76a5c61763.jpeg)
 ![IMG_9580](https://user-images.githubusercontent.com/55901654/133937495-e8aa4da0-691d-4aef-9d1f-4b2d5dec6f1f.jpeg)
 ![IMG_9581](https://user-images.githubusercontent.com/55901654/133937502-26bd7962-680d-4f59-b172-0ebd6974f089.jpeg)
-https://user-images.githubusercontent.com/55901654/133937503-ca36b4ca-0566-440f-97b2-dc50123dd73b.mov
-
-
-
 https://user-images.githubusercontent.com/55901654/133937903-8e61e59c-769a-4ca9-8955-2b793bd7ca5f.mov
 
 
