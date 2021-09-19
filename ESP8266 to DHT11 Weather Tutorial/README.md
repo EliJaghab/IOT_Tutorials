@@ -15,7 +15,7 @@ Software Steps:
 2. Go to File > Preferences and paste this into Additional Boards Manager URLs: http://arduino.esp8266.com/stable/package_esp8266com_index.json11 click: Shyam Gopal Reddy Maram and then click OK
 3. Go to Sketch > Include Library > Manage Libraries and install these 2 libraries: DHT Sensor Library and DHT Sensor library for ESPx
 4. Go to and select Tools > Board > ESP8266 Boards (3.0.2)
-5. Go to File > New, remove the code that is there and copy and paste the C code attached that I adapted from [here](https://circuits4you.com/2019/01/25/interfacing-dht11-with-nodemcu-example/) clicks: Sadgunsaiyadav Shabad Sivaram Swarna Praneeth Chandra Natwa Akhila Kandimalla into the window and then click Save as and name the file as DT11Test.ino
+5. Go to File > New, remove the code that is there and copy and paste the C code attached that I adapted from [here](https://circuits4you.com/2019/01/25/interfacing-dht11-with-nodemcu-example/) clicks: Sadgunsaiyadav Shabad Sivaram Swarna Praneeth Chandra Natwa Akhila Kandimalla into the window and then click Save as and name the file as DT11esp8266.ino
 6. After pasting this code into the window, click Verify and then Upload after the code compiles
 7. Go to Tools > Serial Monitor and change the baud type on the bottom to 115200 baud
 
