@@ -2,9 +2,9 @@ During our last IoT class, we were given some time to work on setting up an exam
 
 Things Needed:
 1. Computer (preferably Windows due to driver issues, but Macs also work)
-2. [Weather Kit] (https://www.amazon.com/gp/product/B07GPBBY7F/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) (includes the ESP8266, Micro USB - USB Cable, 2 40pin Male to Male Jumper Wires, 2 40pin Female to Female Jumper Wires)
-3. [LED Lights] (https://www.amazon.com/Gikfun-Emitting-Diodes-Diffused-Arduino/dp/B06XWTN1YM/ref=sr_1_19?dchild=1&keywords=microcontroller+light&qid=1631503607&sr=8-19)
-4. [Breadboard] (https://www.amazon.com/EL-CP-003-Breadboard-Solderless-Distribution-Connecting/dp/B01EV6LJ7G/ref=pd_sbs_4/131-5979752-5581603?pd_rd_w=dQJ6V&pf_rd_p=0a3ad226-8a77-4898-9a99-63ffeb1aef90&pf_rd_r=D9VE9FYFN9BBCBESKZEP&pd_rd_r=95efd357-c900-40f9-81f6-3d4b1e1bc1ee&pd_rd_wg=OPD8K&pd_rd_i=B01EV6LJ7G&psc=1)
+2. [Weather Kit](https://www.amazon.com/gp/product/B07GPBBY7F/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) (includes the ESP8266, Micro USB - USB Cable, 2 40pin Male to Male Jumper Wires, 2 40pin Female to Female Jumper Wires)
+3. [LED Lights](https://www.amazon.com/Gikfun-Emitting-Diodes-Diffused-Arduino/dp/B06XWTN1YM/ref=sr_1_19?dchild=1&keywords=microcontroller+light&qid=1631503607&sr=8-19)
+4. [Breadboard](https://www.amazon.com/EL-CP-003-Breadboard-Solderless-Distribution-Connecting/dp/B01EV6LJ7G/ref=pd_sbs_4/131-5979752-5581603?pd_rd_w=dQJ6V&pf_rd_p=0a3ad226-8a77-4898-9a99-63ffeb1aef90&pf_rd_r=D9VE9FYFN9BBCBESKZEP&pd_rd_r=95efd357-c900-40f9-81f6-3d4b1e1bc1ee&pd_rd_wg=OPD8K&pd_rd_i=B01EV6LJ7G&psc=1)
 
 Shoutout to Lakshmi for lending me the LED Lights and the Breadboard
 
@@ -17,11 +17,11 @@ Microcontroller Steps:
 
 
 Computer Steps:
-1. Install the [Arduino IDE] (https://www.arduino.cc/en/software)
+1. Install the [Arduino IDE](https://www.arduino.cc/en/software)
 2. Once installed, open the Arduino application and navigate to the preferences pane under Arduino or File. In the input box for 'Additional Boards Manager URLs:' paste this link: http://arduino.esp8266.com/stable/package_esp8266com_index.json and then click OK
 3. Go to Tools > Board > Boards Manager. Here you can search and download the 'ESP8266 by ESP8266 Community' package
 4. Navigate to and select Tools > Board > ESP8266 Boards (3.0.2) > Generic ESP8266 Module
-5. Download the [driver] (https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers) for the ESP8266. Unzip the package, run the program, uninstall and reinstall the driver, and then navigate to the Arduino application and go to Tools > Port and select your microcontroller (Thank you Erika)
+5. Download the [driver](https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers) for the ESP8266. Unzip the package, run the program, uninstall and reinstall the driver, and then navigate to the Arduino application and go to Tools > Port and select your microcontroller (Thank you Erika)
 Go to File > Examples > 01.Basics > Blink. Select the Verify Button at the top left, and then click the Upload Button next to it after its done compiling.
 
 Abstract:
