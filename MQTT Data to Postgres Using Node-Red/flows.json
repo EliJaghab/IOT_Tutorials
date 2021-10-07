@@ -1,0 +1,453 @@
+[
+    {
+        "id": "f3a3c35731e26188",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f20ae4211a766b34",
+        "type": "inject",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "7d398ff8f156c660"
+            ]
+        ]
+    },
+    {
+        "id": "7d398ff8f156c660",
+        "type": "postgresql",
+        "z": "f3a3c35731e26188",
+        "name": "Create table timedata",
+        "query": "DROP TABLE IF EXISTS weatherdata;\n\nCREATE TABLE IF NOT EXISTS weatherdata (\ndate_received int,\ntemperature float,\nhumidity int,\nrandom int\n);\n",
+        "postgreSQLConfig": "66d1e911807f2d29",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 415,
+        "y": 80,
+        "wires": [
+            [
+                "55da6cb1fb0f63be"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "55da6cb1fb0f63be",
+        "type": "debug",
+        "z": "f3a3c35731e26188",
+        "name": "Drop and Recreate TimeData Table",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 780,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "69438a6e1f283243",
+        "type": "inject",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "e0f7a762e9a7fd6e"
+            ]
+        ]
+    },
+    {
+        "id": "1f7f7188b9a9c2e7",
+        "type": "debug",
+        "z": "f3a3c35731e26188",
+        "name": "select * from weatherdata;",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 760,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e0f7a762e9a7fd6e",
+        "type": "postgresql",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "query": "Select * from weatherdata ;",
+        "postgreSQLConfig": "66d1e911807f2d29",
+        "split": false,
+        "rowsPerMsg": "20",
+        "outputs": 1,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "1f7f7188b9a9c2e7"
+            ]
+        ]
+    },
+    {
+        "id": "43ceef47345a9079",
+        "type": "inject",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "e91b62abc5dbca77"
+            ]
+        ]
+    },
+    {
+        "id": "e3031c9040667d6a",
+        "type": "debug",
+        "z": "f3a3c35731e26188",
+        "name": "select count(*) from weatherdata;",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload[0].count",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 780,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e91b62abc5dbca77",
+        "type": "postgresql",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "query": "Select count(*) from weatherdata ;",
+        "postgreSQLConfig": "66d1e911807f2d29",
+        "split": false,
+        "rowsPerMsg": "20",
+        "outputs": 1,
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "e3031c9040667d6a"
+            ]
+        ]
+    },
+    {
+        "id": "90624ca91b55b150",
+        "type": "join",
+        "z": "f3a3c35731e26188",
+        "name": "msg.payload",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 710,
+        "y": 440,
+        "wires": [
+            [
+                "1b91affe71d13454",
+                "ef5c6a4b2eef97e9"
+            ]
+        ]
+    },
+    {
+        "id": "669a0819206fc9f3",
+        "type": "mqtt in",
+        "z": "f3a3c35731e26188",
+        "name": "temperature",
+        "topic": "temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "7c88dd474d12f55f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "90624ca91b55b150"
+            ]
+        ]
+    },
+    {
+        "id": "7ddc31d82e1ca0d3",
+        "type": "mqtt in",
+        "z": "f3a3c35731e26188",
+        "name": "humidity",
+        "topic": "humidity",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "7c88dd474d12f55f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 420,
+        "y": 400,
+        "wires": [
+            [
+                "90624ca91b55b150"
+            ]
+        ]
+    },
+    {
+        "id": "4ee0f7a33cc3a3d3",
+        "type": "inject",
+        "z": "f3a3c35731e26188",
+        "name": "inject timestamp",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "time",
+        "payloadType": "date",
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "025a763d42e31bce"
+            ]
+        ]
+    },
+    {
+        "id": "ef5c6a4b2eef97e9",
+        "type": "postgresql",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "query": "insert into weatherdata \n(date_received, temperature, humidity, random)\nvalues (\n{{{ msg.payload.date }}},\n{{{ msg.payload.temperature }}},\n{{{ msg.payload.humidity }}},\n{{{ msg.payload.random }}}\n);\n",
+        "postgreSQLConfig": "66d1e911807f2d29",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 990,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "025a763d42e31bce",
+        "type": "moment",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "topic": "date",
+        "input": "payload",
+        "inputType": "msg",
+        "inTz": "America/New York",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "YYYY-MM-DD",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/New York",
+        "x": 430,
+        "y": 480,
+        "wires": [
+            [
+                "90624ca91b55b150"
+            ]
+        ]
+    },
+    {
+        "id": "1b91affe71d13454",
+        "type": "debug",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "0829b3bffa55b962",
+        "type": "random",
+        "z": "f3a3c35731e26188",
+        "name": "",
+        "low": 1,
+        "high": "1000000",
+        "inte": "true",
+        "property": "payload",
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "90624ca91b55b150"
+            ]
+        ]
+    },
+    {
+        "id": "5af7fa5ea327c8e2",
+        "type": "inject",
+        "z": "f3a3c35731e26188",
+        "name": "inject random number",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "random",
+        "payload": "random",
+        "payloadType": "num",
+        "x": 140,
+        "y": 560,
+        "wires": [
+            [
+                "0829b3bffa55b962"
+            ]
+        ]
+    },
+    {
+        "id": "66d1e911807f2d29",
+        "type": "postgreSQLConfig",
+        "name": "local test database",
+        "host": "127.0.0.1",
+        "hostFieldType": "global",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "test",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "max": "10",
+        "maxFieldType": "num",
+        "min": "1",
+        "minFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "raspberry",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "7c88dd474d12f55f",
+        "type": "mqtt-broker",
+        "name": "Pi",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
